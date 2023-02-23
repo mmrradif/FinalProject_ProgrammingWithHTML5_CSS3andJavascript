@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Anondo Bazar - happily shop</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="menu.css"/>
+</head>
+<body>
+    <!-- ---------------- Menu ------------------ -->
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="about.html">
+                    <span class="icon">
+                        <ion-icon name="person-add-outline"></ion-icon>
+                    </span>
+                    <span class="text">About Us</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="cart.html">
+                    <span class="icon">
+                        <ion-icon name="bag-remove-outline"></ion-icon>
+                    </span>
+                    <span class="text">Products</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="addProduct.html">
+                    <span class="icon">
+                        <ion-icon name="bag-add-outline"></ion-icon>
+                    </span>
+                    <span class="text">Products</span>
+                </a>
+            </li>
+
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+    <!-- --------- ----------- Products ------------------------------ -->
+
+
+    <!-- ---------------------- Product Card -------------------------- -->
+    <div class="container">
+        <h1>Our Products</h1>      
+    </div>
+
+
+    <!-- ----------------------- Menu Script Start --------------------------- -->
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => {
+                item.classList.remove('active');
+                this.classList.add('active');
+            });
+        }
+        list.forEach((item) => {
+            item.addEventListener('click', activeLink);
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- ----------------------- Menu Script End --------------------------- -->
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+
+    <script>
+        productCard();
+    </script>
+
+</body>
+</html>

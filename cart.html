@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>	
+	<title>
+		Anondo-Bazar Shopping Cart
+	</title>
+	<link rel="stylesheet" href="cart.css"/>
+	<link rel="stylesheet" href="search.css"/>
+	<link rel="stylesheet" href="menu.css"/>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="quickMenu.css"/>
+
+
+	<script>
+		
+		function Delete(e){
+			let items = [];
+			JSON.parse(localStorage.getItem('items')).map(data=>{
+				if(data.id != e.parentElement.parentElement.children[0].textContent){
+					
+					items.push(data);
+				}
+			});
+			localStorage.setItem('items',JSON.stringify(items));
+			location.reload();
+		};
+	</script>
+
+</head>
+<body>
+
+
+	<div class="main">
+		<header id="header" class="header">
+
+			<!-- ----------------------------------- Menu ---------------------- -->
+			<div class="navigation">
+				<ul>
+					<li class="list">
+						<a href="home.html">
+							<span class="icon">
+								<ion-icon name="home-outline"></ion-icon>
+							</span>
+							<span class="text">Home</span>
+						</a>
+					</li>
+
+					<li class="list">
+						<a href="#">
+							<span class="icon">
+								<ion-icon name="person-add-outline"></ion-icon>
+							</span>
+							<span class="text">About Us</span>
+						</a>
+					</li>
+
+					<li class="list active">
+						<a href="#">
+							<span class="icon">
+								<ion-icon name="bag-remove-outline"></ion-icon>
+							</span>
+							<span class="text">Products</span>
+						</a>
+					</li>
+
+					<li class="list">
+						<a href="addProduct.html">
+							<span class="icon">
+								<ion-icon name="bag-add-outline"></ion-icon>
+							</span>
+							<span class="text">Products</span>
+						</a>
+					</li>
+
+					<div class="indicator"></div>
+				</ul>
+			</div>
+
+			<div class="iconShopping">
+				<p>0</p>
+				<i class="fa fa-shopping-cart"></i>
+			</div>
+		</header>
+
+
+		<!-- ------------------------ Search -------------------------------- -->
+		<div class="searchContainer">
+			<div class="searchBox">
+				<div class="shadow"></div>
+				<input type="text" id="searchProduct" placeholder="Search Aynthing You Want..." onkeyup="search()" />
+				<ion-icon name="search-outline" class="searchIcon"></ion-icon>
+			</div>
+		</div>
+
+
+		<div class="category">
+			<ul>
+				<li><a href="#meat">Meat</a></li>
+				<li><a href="#fish">Fish</a></li>
+				<li><a href="#vegetables">Vegetables</a></li>
+			</ul>
+		</div>
+
+
+		<!-- ------------------------------- Products ----------------------- -->
+		<div class="itemsBox" id="meat">
+			<h2>Category < <i> Meat</i></h2>
+			<!-- ------------------------ Search -------------------------------- -->
+
+			<div class="item">
+				<img src="images/meat.jpg" alt="Meat" />
+				<div class="itemInfo">
+					<h1>Beef</h1>
+					<p>1Kg Taka <span>800</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/chicken.jpg" />
+				<div class="itemInfo">
+					<h1>Chicken Meat</h1>
+					<p>1Kg Taka <span>300</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/goat.jpg" />
+				<div class="itemInfo">
+					<h1>Goat Meat</h1>
+					<p>1kg Taka <span>1000</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<img src="images/duck.jpg" alt="Meat" />
+				<div class="itemInfo">
+					<h1>Duck Meat</h1>
+					<p>Taka <span>700</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/pigeon.jpg" />
+				<div class="itemInfo">
+					<h1>Pigeon Meat</h1>
+					<p>1Kg Taka <span>1600</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- ----------------------- Fish -------------------- -->
+
+		<div class="itemsBox" id="fish">
+			<h2>Category < <i> Fish</i></h2>
+			<div class="item">
+				<img src="images/WalkingCatfish.jpg" alt="Meat" />
+				<div class="itemInfo">
+					<h1>Magur or Walking Catfish</h1>
+					<p>1kg Taka <span>700</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/katla.jpg" />
+				<div class="itemInfo">
+					<h1>Catla or Indian Carpt</h1>
+					<p>1kg Taka <span>800</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/ilsa.jpg" />
+				<div class="itemInfo">
+					<h1>Hilsa or Ilish Shad</h1>
+					<p>1kg Taka <span>1500</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<img src="images/telapia.jpg" alt="Meat" />
+				<div class="itemInfo">
+					<h1>Tilapia or Cichlid Fish</h1>
+					<p>1kg Taka <span>300</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/Prawn.jpg" />
+				<div class="itemInfo">
+					<h1>Prawn fish</h1>
+					<p>Taka <span>600</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- ----------------------- Vegetables -------------------- -->
+
+		<div class="itemsBox" id="vegetables">
+			<h2>Category < <i> Vegetables</i></h2>
+			<div class="item">
+				<img src="images/carrot.jpg" alt="Meat" />
+				<div class="itemInfo">
+					<h1>Carrot</h1>
+					<p>1Kg Taka <span>70</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/broccoli.jpg" />
+				<div class="itemInfo">
+					<h1>Broccoli</h1>
+					<p>1Kg Taka <span>80</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/asparagus.jpg" />
+				<div class="itemInfo">
+					<h1>Asparagus</h1>
+					<p>Taka <span>100</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<img src="images/cauliflower.jpg" alt="Meat" />
+				<div class="itemInfo">
+					<h1>Cauliflower</h1>
+					<p>1Kg Taka <span>70</span></p>
+					<a href="#" title="add to cart" class="attToCart">Add to Cart</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<!-- ---------------------------- Cart Box ------------------------ -->
+	<div class="cartBox">
+		<div class="cart">
+			<i class="fa fa-close"></i>
+			<h1>Cart</h1>
+			<table id="table">
+			</table>
+			<a href="payment.html" class="buy">Buy</a>
+		</div>
+
+	</div>
+
+
+
+	<!-- ---------------------------- Quick Menu ---------------- -->
+
+	<div class="qwrapper">
+		<header>Menu</header>
+		<div class="qcontent">
+			<div class="qnavigation">
+				<span title="Home" style="--i:0;--x:-1;--y:0"><a href="home.html"><ion-icon name="home-outline"></ion-icon></a></span>
+				<span title="Add Product" style="--i:1;--x:1;--y:0"><a href="addProduct.html"><ion-icon name="bag-add-outline"></ion-icon></a></span>
+				<span title="Product" style="--i:2;--x:0;--y:-1"><a href="cart.html"><ion-icon name="chatbubble-outline"></ion-icon></a></span>
+				<span title="Fish" style="--i:3;--x:0;--y:1"><a href="#fish"><ion-icon name="fish-outline"></ion-icon></a></span>
+				<span title="Meat" style="--i:4;--x:1;--y:1"><a href="#meat"><ion-icon name="arrow-up-outline"></ion-icon></a></span>
+				<span title="Vegetables" style="--i:5;--x:-1;--y:-1"><a href="#vegetables"><ion-icon name="arrow-down-outline"></ion-icon></a></span>
+				<span title="Person" style="--i:6;--x:0;--y:0"><a href="#"><ion-icon name="person-add-outline"></ion-icon></a></ion-icon></span>
+				<span style="--i:7;--x:-1;--y:1"><ion-icon name="water-outline"></ion-icon></span>
+				<span style="--i:8;--x:1;--y:-1"><ion-icon name="time-outline"></ion-icon></span>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- -------------------------------------------------------- -->
+	<!-- ---------------------------- Quick Menu ------------------------------ -->
+
+	<script>
+		let navigation = document.querySelector('.qnavigation');
+		navigation.onclick = function () {
+			navigation.classList.toggle('qactive');
+		}
+	</script>
+
+	<script>
+		const wrapper = document.querySelector(".qwrapper"),
+			header = wrapper.querySelector("header");
+
+		function onDrag({ movementX, movementY }) {
+			let getStyle = window.getComputedStyle(wrapper);
+			let leftVal = parseInt(getStyle.left);
+			let topVal = parseInt(getStyle.top);
+			wrapper.style.left = `${leftVal + movementX}px`;
+			wrapper.style.top = `${topVal + movementY}px`;
+		}
+
+		header.addEventListener("mousedown", () => {
+			header.classList.add("active");
+			header.addEventListener("mousemove", onDrag);
+		});
+
+		document.addEventListener("mouseup", () => {
+			header.classList.remove("active");
+			header.removeEventListener("mousemove", onDrag);
+		});
+	</script>
+
+	<!-- ---------------------------------------------------------------------- -->
+	<!-- ---------------------------------- Menu ------------------------------- -->
+	<script>
+		const list = document.querySelectorAll('.list');
+		function activeLink() {
+			list.forEach((item) => {
+				item.classList.remove('active');
+				this.classList.add('active');
+			});
+		}
+		list.forEach((item) => {
+			item.addEventListener('click', activeLink);
+		});
+	</script>
+
+
+
+
+	<!-- Icon -->
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+	<!-- script Link -->
+	<script src="cart.js"></script>
+	<script src="search.js"></script>
+</body>
+</html>

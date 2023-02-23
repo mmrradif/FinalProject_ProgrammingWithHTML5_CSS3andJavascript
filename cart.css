@@ -1,0 +1,300 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Century Gothic';
+}
+html{
+	scroll-behavior:smooth;
+}
+body{
+	background-color:whitesmoke;
+}
+.main{
+	position: relative;
+	width: 100%;
+}
+	.main header {
+		position: relative;
+		height: 15vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	.category{
+		position:absolute;
+		top:200px;
+		left:200px;
+		display:flex;
+		justify-content:center;
+		align-items:center;		
+	}
+	.category ul{
+		display:flex;
+		justify-content:space-between;
+		gap:20px;
+	}
+	.category ul li{
+		list-style:none;
+		border:1px solid #555;
+		padding:15px;
+		border-radius:50px;
+		background:#fff;
+	}
+		.category ul li:hover{
+			background:#4800ff;	
+			border:none;
+		}
+		.category ul li a {
+			text-decoration: none;
+			font-weight:bold;
+		}
+			.category ul li a:hover {
+				color:#fff;
+			}
+			/*-------------------- Cart Icon ---------------*/
+			.main header .iconShopping {
+				position: absolute;
+				top: 100px;
+				right: 200px;
+				display: flex;
+				cursor: pointer;
+				z-index: 1;
+				position: relative;
+				font-size: 2.5rem;
+			}
+	.main header .iconShopping i {
+		color: #4800ff;
+	}
+	.main header .iconShopping p {
+		position: absolute;
+		top: -5px;
+		right: -12px;
+		font-size: 1rem;
+		padding: 4px;
+		border-radius: 100%;
+		background-color: #e3e3e3;
+		color: #4800ff;
+	}
+
+/*------------------------------- items -------------------------*/
+	.main .itemsBox {
+		position: relative;
+		top: 150px;
+		width: 95%;
+		margin: 20px auto;
+		padding:20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		overflow: hidden;
+	}
+
+/*---------------- Hover --------------*/
+.itemsBox:hover .item {
+	filter: blur(1px);
+	opacity: 0.9;
+}
+
+.itemsBox .item:hover {
+	filter: blur(0px);
+	opacity: 1;
+}
+
+	.main .itemsBox .item {
+		position: relative;
+		width: 350px;
+		height: 190px;
+		background: linear-gradient(#fff,#fff,#e3e3e3);
+		border-radius: 20px;
+		box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+		transition: 0.5s;
+		box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+		margin: 10px 5px 5px 5px;
+		overflow: hidden;
+	}
+
+			.main .itemsBox .item:hover {
+				width: 400px;
+				height: 250px;
+			}
+			.main .itemsBox .item img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.main .itemsBox .item h1 {
+				position: relative;
+				width: 100%;
+				text-align: center;
+				font-size: 1.5rem;
+				font-weight: lighter;
+				padding: 5px;
+				background: rgba(120,120,120,0.5);
+				color: #fff;
+				border-bottom: 2px solid #fff;
+				border-radius: 2px;
+				font-weight:800;
+			}
+			.main .itemsBox .item p {
+				position: relative;
+				width: 100%;
+				text-align: center;
+				font-size: 1.2rem;
+				font-weight: lighter;
+				padding: 5px;
+				color: #fff;
+				background: rgba(0,140,0,0.5);
+				border-radius: 2px;
+				font-weight:500;
+			}
+
+			.main .itemsBox .item a {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				text-align: left;
+				font-size: 1.2rem;
+				font-weight: lighter;
+				padding: 10px 0;
+				background: #0f0f0fa5;
+				text-decoration: none;
+				color: #fff;
+				padding: 10px 15px;
+				text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+				border-radius:10px;
+				font-family:Constantia;
+			}
+.main .itemsBox .item a:hover{
+	background: rgba(0,140,0,0.5);
+}
+
+/*------------------------- Meat ------------------*/
+#meat{
+	height:100vh;
+}
+#fish {
+	height: 100vh;
+}
+#vegetables {
+	height: 100vh;
+}
+.itemsBox h2 {
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: linear-gradient(#fff,#fff,#e3e3e3);
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+	border-radius:20px;
+	font-size:1.8em;
+}
+	.itemsBox h2 i{
+		color:darkblue;
+	}
+	/*------------------------------cart box--------------------------*/
+	.cartBox {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(0,140,0,0.8);
+		z-index: 99999;
+		transition: 0.5s linear;
+		transform: scale(0);
+	}
+.cartBox.active{
+	transform: scale(1);
+}
+	.cartBox .cart {
+		position: relative;
+		height: 70%;
+		width: 80%;
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 10px;
+		background: linear-gradient(#fff,#fff,#e3e3e3);
+		box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+		margin: 60px 5px 5px 5px;
+		overflow-y:scroll;
+	}
+		.cartBox .cart i {
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: #f00;
+			padding: 10px 15px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 1.25em;
+		}
+			.cartBox .cart i:hover {
+				background: #ff0000a5;
+			}
+
+		.cartBox .cart h1 {
+			position: relative;
+			margin-top: 2%;
+			font-size: 2.8rem;
+			color: rgba(0,140,0,0.8);
+		}
+
+/*------------------------ Cart Table Design ------------------------*/
+#table {
+	width: 850px;
+	height:80%;
+	text-align: center;
+	margin: 20px auto;
+	padding: 5px 10px 5px 8px;
+	width: 80%;
+	border: 1px solid #e4e4e4;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 5px 5px 5px rgba(0,0,0,0.1), 15px 15px 5px rgba(0,0,0,0.1), 5px 5px 2px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+/*	overflow-y:scroll;*/
+}
+	#table th {
+		border-right: 1px solid #e4e4e4;
+		border-bottom: 3px solid #e4e4e4;
+		background: linear-gradient(#fff,#fff,#fff);
+		padding: 2px;
+		height: 50px;
+		font-size:1rem;
+	}
+
+		#table th a {
+			text-decoration: none;
+			color: #f00;
+		}
+#table td {
+	border-right: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	padding: 10px 5px;
+}
+
+.cartBox .cart .buy {
+	text-decoration: none;
+	background: #4800ff;
+	color: #fff;
+	padding: 7px 30px;
+	font-size: 1.8em;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+}
+.cartBox .cart .buy:hover{
+	background:rgba(0,140,0,0.8);
+}
+

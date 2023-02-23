@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Anondo Bazar - happily shop</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--<link rel="stylesheet" href="menu.html"/>-->
+</head>
+<body>
+    <!-- ------------- Menu Area -------------- -->
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="home.html">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="person-add-outline"></ion-icon>
+                    </span>
+                    <span class="text">About Us</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="cart.html">
+                    <span class="icon">
+                        <ion-icon name="bag-remove-outline"></ion-icon>
+                    </span>
+                    <span class="text">Products</span>
+                </a>
+            </li>
+
+            <li class="list active">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="bag-add-outline"></ion-icon>
+                    </span>
+                    <span class="text">Cart</span>
+                </a>
+            </li>
+
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+    <!-- ---------------- Input Product Area ------------- -->
+    <form>
+        <input type="text" placeholder="Image Srource" id="image" />
+        <input type="email" placeholder="Product Name" id="name" />
+        <input type="text" placeholder="Price" id="price" />
+        <input type="text" placeholder="About Product" id="details" />
+        <button type="button" class="submit">Insert</button>
+        <button type="button" class="update">Update</button>
+    </form>
+
+    <!-- ----------- Data Grid View Area ------------- -->
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+    </table>
+
+
+
+    <!--<button type="button" class="showAlert">Show Alert</button>
+
+    <div class="alertBox hide hidden">
+        Data Added Successfully
+        <span class="closeAlert">&times;</span>
+    </div>-->
+    <!--<div class="container">
+        <h1 class="employee">Employers</h1>
+    </div>-->
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => {
+                item.classList.remove('active');
+                this.classList.add('active');
+            });
+        }
+        list.forEach((item) => {
+            item.addEventListener('click', activeLink);
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+
+    background-color: whitesmoke;
+}
+
+::selection {
+    color: #fff;
+    background: #6F36FF;
+}
+
+
+.qwrapper {
+    position: absolute;
+    right: 5%;
+    bottom: 0%;
+    width: 80px;
+    height: 110px;
+    background: linear-gradient(#fff,#fff,#e3e3e3);
+    color: #555;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.06);
+    z-index:9999;
+}
+
+    .qwrapper header {
+        font-size: 18px;
+        text-align: center;
+        font-weight: 600;
+        padding: 5px 5px;
+        border-bottom: 1px solid #ccc;
+        cursor:grab;
+    }
+
+        .qwrapper header.qactive {
+            cursor: move;
+            user-select: none;
+        }
+
+    .qwrapper .qcontent {
+        display: flex;
+        padding: 2px;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+/*-------------------------------------- Navigation Area --------------------------------------*/
+
+.qnavigation {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(#fff,#fff,#e3e3e3);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+}
+
+
+    .qnavigation.qactive {
+        width: 200px;
+        height: 200px;
+        transition-delay: 0s;
+    }
+
+
+    .qnavigation span {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #555;
+        border-radius: 50%;
+        transform: translate(calc(12px * var(--x)),calc(12px * var(--y)));
+        transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
+/*        transition-delay:calc(0.1s * var(--i));*/
+    }
+
+
+
+    .qnavigation.qactive span {
+        width: 45px;
+        height: 45px;
+        background: #555;
+        transform: translate(calc(60px * var(--x)),calc(60px * var(--y)));
+    }
+
+
+    .qnavigation span ion-icon {
+        transition: 0.5s;
+        font-size: 0em;
+    }
+
+    .qnavigation.qactive span ion-icon {
+        font-size: 1.35em;
+        color: #fff;
+    }
+
+
+    .qnavigation.qactive span:hover ion-icon {
+        color: #2dfc52;
+        filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52) drop-shadow(0 0 15px #2dfc52);
